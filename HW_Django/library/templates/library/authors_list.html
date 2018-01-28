@@ -7,8 +7,10 @@
 <ul class="authors_list">
     {% for author in authors %}
         <li class="list">
-            <a href="{% url 'books' author.name %}">{{ author.name }}</a>
+            <a href="">{{ author.name }}</a>
         </li>
     {% endfor %}
 </ul>
 {% endblock %}
+
+Ссылка на книги автора {% url 'books' author.name %}

@@ -3,10 +3,8 @@ from django.db import models
 
 class Book(models.Model):
     author = models.ForeignKey('Author', on_delete='CASCADE', blank=True, null=True, related_name='book')
-    # author = models.ManyToManyField('Author', related_name = 'book')
     title = models.CharField('Заголовок', max_length=200)
     published_year = models.PositiveIntegerField('Год издания', blank=True, null=True)
-    # genre = models.ForeignKey('Genre', on_delete='CASCADE', blank=True, null=True)
     genre = models.ManyToManyField('Genre', related_name='book')
 
     def __str__(self):
